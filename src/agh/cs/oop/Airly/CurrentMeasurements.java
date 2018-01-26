@@ -1,9 +1,14 @@
-package agh.cs.oop;
+package agh.cs.oop.Airly;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Measurement {
+/**
+ * Created by Kamil on 2018-01-26.
+ */
+
+
+public class CurrentMeasurements {
 
     private Double airQualityIndex;
     private Double pm1;
@@ -13,7 +18,7 @@ public class Measurement {
     private Double humidity;
     private Double temperature;
     private Integer pollutionLevel;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     public Double getAirQualityIndex() {
         return airQualityIndex;
