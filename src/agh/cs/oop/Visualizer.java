@@ -20,7 +20,7 @@ public class Visualizer {
             " /  _____  \\  |  | |  |\\  \\-.|  `----.   |  |     \n" +
             "/__/     \\__\\ |__| | _| `.__||_______|   |__|     \n" +
             "                                                      \n";
-    private final static DecimalFormat f = new DecimalFormat("##.00");
+    private final static DecimalFormat f = new DecimalFormat("#0.00");
     private Measurement measurement;
 
     public Visualizer(Measurement measurement) {

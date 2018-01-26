@@ -41,7 +41,6 @@ public class AirlyClient {
             if ((!cmd.hasOption("sensorid") && (!cmd.hasOption("longitude") || !cmd.hasOption("latitude"))) || apiKey == null)
                 throw new ParseException("Require either -sensorid or -latitude with -longitude and apikey (either in the environment or as option!");
             RequestMaker maker = new RequestMaker(cmd, apiKey);
-            maker.makeURL();
             DataDeserializer deserializer = new DataDeserializer(maker.getDataAsJsonObject());
             Visualizer visualizer = new Visualizer(deserializer.deserialize());
             visualizer.visualize(cmd);

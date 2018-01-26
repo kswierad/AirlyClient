@@ -33,7 +33,6 @@ public class RequestMaker {
             this.requestType = RequestType.NearestSensor;
             parameters.put("longitude", cmd.getOptionValue("longitude"));
             parameters.put("latitude", cmd.getOptionValue("latitude"));
-            this.makeURL();
             if (this.getDataAsJsonObject().getAsJsonPrimitive("id") == null)
                 throw new IOException("Couldn't find ID of a nearest sensor. Please check the coordinates.");
             String id = this.getDataAsJsonObject().getAsJsonPrimitive("id").getAsString();
@@ -47,7 +46,7 @@ public class RequestMaker {
 
         final int responseCode;
 
-
+        this.makeURL();
         HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
         conn.setRequestMethod("GET");
         conn.setRequestProperty("apikey", apikeyHeader);
@@ -75,7 +74,7 @@ public class RequestMaker {
         }
     }
 
-    public void makeURL() {
+    private void makeURL() {
 
         StringBuilder tempURL = new StringBuilder(baseUrl);
         tempURL.append(this.requestType);
