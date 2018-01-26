@@ -2,6 +2,7 @@ package agh.cs.oop;
 
 import agh.cs.oop.Airly.CurrentMeasurements;
 import agh.cs.oop.Airly.Measurement;
+import org.apache.commons.cli.CommandLine;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -26,7 +27,7 @@ public class Visualizer {
         this.measurement = measurement;
     }
 
-    public void visualize(Boolean history) throws Exception {
+    public void visualize(CommandLine cmd) throws Exception {
         StringBuilder builder = new StringBuilder();
         CurrentMeasurements current = measurement.getCurrentMeasurements();
         builder.append(header);
@@ -62,7 +63,7 @@ public class Visualizer {
         System.out.print(builder);
 
 
-        if (history) {
+        if (cmd.hasOption("history")) {
             System.out.println("\n" +
                     "  _  _  ___  ___  _____  ___   ___ __   __\n" +
                     " | || ||_ _|/ __||_   _|/ _ \\ | _ \\\\ \\ / /\n" +

@@ -44,7 +44,7 @@ public class AirlyClient {
             maker.makeURL();
             DataDeserializer deserializer = new DataDeserializer(maker.getDataAsJsonObject());
             Visualizer visualizer = new Visualizer(deserializer.deserialize());
-            visualizer.visualize(cmd.hasOption("history"));
+            visualizer.visualize(cmd);
         } catch (ParseException e) {
             System.out.println(e.getMessage());
             System.out.println("Let you learn how to use it: " +

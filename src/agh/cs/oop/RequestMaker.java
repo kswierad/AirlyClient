@@ -34,7 +34,6 @@ public class RequestMaker {
             parameters.put("longitude", cmd.getOptionValue("longitude"));
             parameters.put("latitude", cmd.getOptionValue("latitude"));
             this.makeURL();
-            System.out.println(url);
             if (this.getDataAsJsonObject().getAsJsonPrimitive("id") == null)
                 throw new IOException("Couldn't find ID of a nearest sensor. Please check the coordinates.");
             String id = this.getDataAsJsonObject().getAsJsonPrimitive("id").getAsString();
