@@ -23,7 +23,6 @@ public class DataDeserializer {
         Measurement result = new Measurement();
         Gson gson = new Gson();
         result.setCurrentMeasurements(gson.fromJson(data.get("currentMeasurements"), CurrentMeasurements.class));
-        System.out.println(data.get("currentMeasurements"));
         JsonArray history = data.getAsJsonArray("history");
         List<History> list = new LinkedList<>();
         for (JsonElement element : history) {

@@ -48,8 +48,7 @@ public class RequestMaker {
 
         final int responseCode;
 
-        System.out.println(url);
-        System.out.println(apikeyHeader);
+
         HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
         conn.setRequestMethod("GET");
         conn.setRequestProperty("apikey", apikeyHeader);
